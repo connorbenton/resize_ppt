@@ -1,0 +1,5 @@
+C:\Users\cbenton\Downloads\X-SharpDevelop-3_3.2_rev2\Documents\SharpDevelop Projects\resize_ppt\resize_ppt\bin\Debug\resize_ppt.exe
+C:\Users\cbenton\Downloads\X-SharpDevelop-3_3.2_rev2\Documents\SharpDevelop Projects\resize_ppt\resize_ppt\bin\Debug\resize_ppt.pdb
+C:\Users\cbenton\Downloads\X-SharpDevelop-3_3.2_rev2\Documents\SharpDevelop Projects\resize_ppt\resize_ppt\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\cbenton\Downloads\X-SharpDevelop-3_3.2_rev2\Documents\SharpDevelop Projects\resize_ppt\resize_ppt\obj\x86\Debug\resize_ppt.exe
+C:\Users\cbenton\Downloads\X-SharpDevelop-3_3.2_rev2\Documents\SharpDevelop Projects\resize_ppt\resize_ppt\obj\x86\Debug\resize_ppt.pdb

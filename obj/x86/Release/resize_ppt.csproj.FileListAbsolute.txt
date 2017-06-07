@@ -1,0 +1,3 @@
+C:\Users\cbenton\Downloads\X-SharpDevelop-3_3.2_rev2\Documents\SharpDevelop Projects\resize_ppt\resize_ppt\bin\Release\resize_ppt.exe
+C:\Users\cbenton\Downloads\X-SharpDevelop-3_3.2_rev2\Documents\SharpDevelop Projects\resize_ppt\resize_ppt\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\cbenton\Downloads\X-SharpDevelop-3_3.2_rev2\Documents\SharpDevelop Projects\resize_ppt\resize_ppt\obj\x86\Release\resize_ppt.exe
