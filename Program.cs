@@ -89,27 +89,28 @@ namespace testresize
 			objApp = new PowerPoint.Application();
 			objApp.Visible = Microsoft.Office.Core.MsoTriState.msoTrue;
 			objPresSet = objApp.Presentations;
-			objPres = objPresSet.Open(pptPresPath, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoFalse);
+			objPres = objPresSet.Open(pptPresPath, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue);
 			objSlides = objPres.Slides;
 			
 			//Resize Section
-			objPresNew = objPresSet.Add(Microsoft.Office.Core.MsoTriState.msoFalse);
+			objPresNew = objPresSet.Add(Microsoft.Office.Core.MsoTriState.msoTrue);
 			
-			try{
+//			try{
 			
 			objPresNew.Slides.Add(1, PowerPoint.PpSlideLayout.ppLayoutBlank);
 			var seq = Enumerable.Range(1,objPres.Slides.Count).ToArray();
 			objPres.Slides.Range(seq).Copy();
-			objPresNew.Slides[1].Select();
-			objPresNew.Application.CommandBars.ExecuteMso("PasteSourceFormatting");
+//			objPresNew.Slides[1].Select();
+			objPresNew.Slides[1].Application.CommandBars.ExecuteMso("PasteSourceFormatting");
 			Application.DoEvents();
 			objPresNew.Slides[1].Delete();
-			objApp.ActiveWindow.Selection.Unselect();
+//			objApp.ActiveWindow.Selection.Unselect();
 			
 			
 			//Resize stuck shapes
 			foreach (PowerPoint._Slide d in objPresNew.Slides) {
 				foreach (PowerPoint.Shape e in d.Shapes) {
+//					Console.WriteLine(e.Name);
 					PowerPoint.Shape eOld = objPres.Slides[d.SlideNumber].Shapes[e.Name];
 					if (e.Type == Microsoft.Office.Core.MsoShapeType.msoAutoShape && e.Height != eOld.Height)
 					{
@@ -119,13 +120,15 @@ namespace testresize
 			}
 			
 			//Delete notes master
-			var seq2 = Enumerable.Range(1,objPres.SlideMaster.Shapes.Count).ToArray();
+			var seq2 = Enumerable.Range(1,objPresNew.SlideMaster.Shapes.Count).ToArray();
 			objPresNew.SlideMaster.Shapes.Range(seq2).Delete();
 			
 			//Save new pres
 			objPresNew.SaveAs(pptCorrectedPresPath, PowerPoint.PpSaveAsFileType.ppSaveAsDefault, Microsoft.Office.Core.MsoTriState.msoFalse);
+
+//			objApp.Visible = Microsoft.Office.Core.MsoTriState.msoTrue;
 			
-			objPresNew.NewWindow();
+//			objPresNew.NewWindow();
 //			Set pptApp = GetObject(Class:="PowerPoint.Application")
 //			Set pptPres = pptApp.ActivePresentation
 //			pptPath = pptPres.Path
@@ -160,10 +163,10 @@ namespace testresize
 //			 Console.WriteLine("Press any key to continue . . . ");
 //			 Console.ReadKey(true);
 //		
-			} catch(Exception exc){
-				objPresNew.Close();
-				objPres.Close();
-			}
+//			} catch(Exception exc){
+//				objPresNew.Close();
+//				objPres.Close();
+//			}
 		}
 	}
 }
